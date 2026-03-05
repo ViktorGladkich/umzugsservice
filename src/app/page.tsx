@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { FeatureService } from "@/components/FeatureService";
 import { Vorteile } from "@/components/Vorteile";
-import { UeberUns } from "@/components/UeberUns";
+import { UberUns } from "@/components/UberUns";
 import MovingCalculator from "@/components/Calculator";
 import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
@@ -20,7 +20,7 @@ export default function Home() {
   });
 
   return (
-    <main className="relative min-h-screen bg-white overflow-x-hidden text-neutral-800 font-sans selection:bg-blue-100">
+    <main className="relative min-h-screen bg-white text-neutral-800 font-sans selection:bg-blue-100">
       {/* Scroll Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-blue-600 z-101 origin-left"
@@ -42,13 +42,18 @@ export default function Home() {
             <section id="services">
               <Vorteile />
             </section>
-
-            <UeberUns />
-
-            <section id="calculator">
-              <MovingCalculator />
-            </section>
           </article>
+        </div>
+
+        {/* UberUns is now completely full width, outside the padding! */}
+        <div className="w-full">
+          <UberUns />
+        </div>
+
+        <div className="px-[15px] md:px-[70px]">
+          <section id="calculator">
+            <MovingCalculator />
+          </section>
         </div>
 
         <Footer />

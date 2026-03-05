@@ -223,12 +223,7 @@ function FeatureEight() {
           Ort. Volle Transparenz von Anfang an.
         </p>
         <div className="mt-8">
-          <Button
-            variant="secondary"
-            className="pl-6 pr-1.5 py-1 text-sm h-10 gap-3"
-          >
-            Termin vereinbaren
-          </Button>
+          <Button variant="secondary">Termin vereinbaren</Button>
         </div>
       </div>
     </BentoCard>

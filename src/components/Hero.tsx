@@ -101,12 +101,7 @@ export function Hero() {
             </div>
 
             {/* Badge Content - Rectangular and Row layout, matches section background */}
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-white pt-4 pl-6 pr-8 md:pt-4 md:pl-8 md:pr-12 md:pb-4 rounded-tl-[32px] relative z-10"
-            >
+            <div className="bg-white pt-4 pl-6 pr-8 pb-4 md:pt-4 md:pl-8 md:pr-12 md:pb-4 rounded-tl-[32px] relative z-10">
               <div className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-8">
                 <div className="flex -space-x-3">
                   {[1, 2, 3, 4].map((i) => (
@@ -150,7 +145,7 @@ export function Hero() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

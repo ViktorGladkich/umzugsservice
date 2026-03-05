@@ -44,11 +44,11 @@ export function Navbar() {
         opacity: showNav ? 1 : 0,
       }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-[15px] right-[15px] md:left-[70px] md:right-[70px] z-50 py-6 md:py-8 ${
+      className={`fixed top-0 left-[15px] right-[15px] md:left-[70px] md:right-[70px] z-50 py-4 md:py-4 ${
         showNav ? "pointer-events-auto" : "pointer-events-none"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between bg-white/60 backdrop-blur-2xl border border-white/40 px-6 py-2 md:py-4 md:px-8 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative z-50">
+      <div className="max-w-7xl mx-auto flex items-center justify-between bg-white/60 backdrop-blur-2xl border border-white/40 px-6 py-2 md:px-8 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.06)] relative z-50">
         <div className="text-xl md:text-2xl font-black tracking-tighter flex items-center gap-2 text-neutral-900">
           <div className="w-6 h-6 md:w-8 md:h-8 bg-blue-600 rounded-lg" />
           Umzugsservice.
