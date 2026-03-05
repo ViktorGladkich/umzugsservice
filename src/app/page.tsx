@@ -5,8 +5,8 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { FeatureService } from "@/components/FeatureService";
 import { Vorteile } from "@/components/Vorteile";
+import { UeberUns } from "@/components/UeberUns";
 import MovingCalculator from "@/components/Calculator";
-import FloatingActions from "@/components/FloatingActions";
 import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 
@@ -43,6 +43,8 @@ export default function Home() {
               <Vorteile />
             </section>
 
+            <UeberUns />
+
             <section id="calculator">
               <MovingCalculator />
             </section>
@@ -50,7 +52,6 @@ export default function Home() {
         </div>
 
         <Footer />
-        <FloatingActions />
       </div>
     </main>
   );

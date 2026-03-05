@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { SectionBadge } from "@/components/ui/SectionBadge";
 
 const services = [
   {
@@ -12,7 +11,7 @@ const services = [
     shortTitle: "Privatumzüge",
     description:
       "Komplett-Service für Ihren Wohnungswechsel. Von der Planung bis zur letzten Box – wir kümmern uns um alles.",
-    image: "/images/private_moving_germany_1772677492864.png",
+    image: "/images/private_moving.png",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -34,7 +33,7 @@ const services = [
     shortTitle: "Büroumzüge",
     description:
       "Minimale Ausfallzeiten für Ihr Business. Professionelle IT-Verlagerung und Aktenumzüge nach Maß.",
-    image: "/images/office_moving_germany_1772677505816.png",
+    image: "/images/office_moving.png",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -56,7 +55,7 @@ const services = [
     shortTitle: "Einpackservice",
     description:
       "Sicherheit für Ihr Hab und Gut. Wir verpacken alles bruchsicher mit modernsten Materialien для максимальной защиты.",
-    image: "/images/packing_service_germany_1772677518641.png",
+    image: "/images/packing_service.png",
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -102,7 +101,14 @@ export function FeatureService() {
       <div className="max-w-[1440px] mx-auto flex flex-col items-start gap-12 md:gap-20 px-6 md:px-0">
         {/* Header content */}
         <div className="flex flex-col items-center text-center gap-4 w-full max-w-[1000px] mx-auto overflow-hidden">
-          <SectionBadge title="Unsere Leistungen" />
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-blue-600 font-bold tracking-widest uppercase text-sm md:text-base"
+          >
+            Unsere Leistungen
+          </motion.span>
 
           <div className="relative w-full">
             <h2 className="text-5xl md:text-7xl tracking-[-0.04em] leading-[0.9] text-black whitespace-normal md:whitespace-nowrap">
@@ -131,7 +137,7 @@ export function FeatureService() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-lg md:text-xl text-black leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-neutral-500 leading-relaxed max-w-2xl mx-auto">
               Unser umfassendes Serviceangebot umfasst professionelle
               Privatumzüge, effiziente Projektlogistik und erstklassige
               Verpackungslösungen.
@@ -141,8 +147,8 @@ export function FeatureService() {
 
         {/* Layout: Static Text Block + Dynamic Accordion Images */}
         <div className="flex flex-col lg:flex-row w-full gap-8 items-stretch pt-0">
-          {/* Static Left Side Column */}
-          <div className="flex flex-col justify-end gap-6 w-full lg:w-[380px] shrink-0 min-h-[400px]">
+          {/* Static Left Side Column — desktop only */}
+          <div className="hidden lg:flex flex-col justify-end gap-6 w-[380px] shrink-0 min-h-[400px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -167,8 +173,86 @@ export function FeatureService() {
             </AnimatePresence>
           </div>
 
-          {/* Dynamic Accordion Images Side */}
-          <div className="flex-1 flex flex-row items-stretch gap-0 bg-white">
+          {/* MOBILE: Simple stacked cards */}
+          <div className="flex flex-col gap-0 md:hidden">
+            {correctedServices.map((service, index) => (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="flex flex-col"
+              >
+                <div className="relative w-full h-[320px] rounded-[30px] overflow-hidden">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                  />
+                  {/* Bitten Corner Effect */}
+                  <div className="absolute bottom-0 right-0 z-10 flex items-end">
+                    <div className="relative flex items-end">
+                      <div className="absolute -top-[40px] right-0 w-[40px] h-[40px] text-white">
+                        <svg
+                          viewBox="0 0 40 40"
+                          fill="none"
+                          className="w-full h-full"
+                        >
+                          <path
+                            d="M40 40V0C40 22.0914 22.0914 40 0 40H40Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                      <div className="absolute bottom-0 -left-[40px] w-[40px] h-[40px] text-white">
+                        <svg
+                          viewBox="0 0 40 40"
+                          fill="none"
+                          className="w-full h-full"
+                        >
+                          <path
+                            d="M40 40V0C40 22.0914 22.0914 40 0 40H40Z"
+                            fill="currentColor"
+                          />
+                        </svg>
+                      </div>
+                      <div className="bg-white pt-5 pl-8 pr-8 rounded-tl-[30px] min-w-[200px]">
+                        <span className="text-4xl text-blue-600 leading-none block mb-1">
+                          {service.id}
+                        </span>
+                        <p className="text-xl text-black uppercase tracking-widest">
+                          {service.shortTitle}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Description below card */}
+                <div className="flex flex-col gap-3 px-2 pt-6 pb-10">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 text-black shrink-0">
+                      {service.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-black tracking-tight">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-neutral-500 leading-relaxed text-base">
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* DESKTOP: Accordion hover */}
+          <div className="hidden md:flex flex-1 flex-row items-stretch gap-0 bg-white">
             {correctedServices.map((service, index) => {
               const isActive = activeIndex === index;
 
@@ -176,8 +260,8 @@ export function FeatureService() {
                 <motion.div
                   key={service.id}
                   onMouseEnter={() => setActiveIndex(index)}
-                  className={`relative flex overflow-hidden cursor-pointer h-[500px] ${
-                    index === 2 && activeIndex !== 1
+                  className={`relative flex overflow-hidden cursor-pointer ${
+                    index === 2 && activeIndex === 0
                       ? "border-l border-[#c7c7c7]"
                       : ""
                   }`}
@@ -185,10 +269,11 @@ export function FeatureService() {
                     flex: isActive ? 4 : 0.45,
                   }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ height: 500 }}
                 >
-                  {/* Expanded view for this item (Image only) */}
+                  {/* Expanded view — Image */}
                   <div
-                    className={`relative w-full h-full transition-opacity duration-500 rounded-[50px] overflow-hidden ${isActive ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+                    className={`relative w-full h-full transition-opacity duration-500 overflow-hidden rounded-[50px] ${isActive ? "opacity-100" : "opacity-0 pointer-events-none"}`}
                   >
                     <Image
                       src={service.image}
@@ -196,7 +281,6 @@ export function FeatureService() {
                       fill
                       className="object-cover"
                     />
-
                     {/* Bitten Corner Effect */}
                     <div className="absolute bottom-0 right-0 z-10 flex items-end">
                       <div className="relative flex items-end">
@@ -224,11 +308,11 @@ export function FeatureService() {
                             />
                           </svg>
                         </div>
-                        <div className="bg-white pt-5 pl-10 pr-10  rounded-tl-[40px] min-w-[220px]">
-                          <span className="text-5xl text-black leading-none block">
+                        <div className="bg-white pt-5 pl-10 pr-10 rounded-tl-[40px] min-w-[220px]">
+                          <span className="text-5xl text-blue-600 leading-none block mb-1">
                             {service.id}
                           </span>
-                          <p className="text-2xl text-black uppercase tracking-widest ">
+                          <p className="text-2xl text-black uppercase tracking-widest">
                             {service.shortTitle}
                           </p>
                         </div>
@@ -236,7 +320,7 @@ export function FeatureService() {
                     </div>
                   </div>
 
-                  {/* Tab view for this item (When NOT active) */}
+                  {/* Tab view — collapsed */}
                   <div
                     className={`absolute inset-0 bg-white flex flex-col items-center justify-start py-10 z-20 transition-opacity duration-300 pointer-events-none ${isActive ? "opacity-0" : "opacity-100"}`}
                   >
