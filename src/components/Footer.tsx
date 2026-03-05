@@ -2,31 +2,34 @@
 
 import { Button } from "@/components/ui/Button";
 
+/**
+ * Global Footer with contact info and legal navigation.
+ * Uses a dark theme to anchor the bottom of the page.
+ */
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="w-full bg-neutral-950 text-white py-16 md:py-24 px-[15px] md:px-[70px] relative z-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
+        {/* Brand & Description */}
         <div className="col-span-1 md:col-span-2">
           <div className="text-3xl font-black tracking-tighter mb-8 italic">
             Umzugsservice.
           </div>
           <p className="text-neutral-500 max-w-sm mb-8 text-lg leading-relaxed">
-            Professionelle Umzugsdienstleistungen für Dresden, Sachsen und ganz
-            Europa. Qualität, die man sieht и профессионализм в каждой детали.
+            Professionelle Umzugsdienstleistungen für Dresden, Sachsen и ganz
+            Europa. Qualität, die man sieht – kompetent und zuverlässig bis ins
+            Detail.
           </p>
           <div className="mt-4">
-            <Button
-              href="#calculator"
-              variant="primary"
-              className="bg-white text-neutral-900"
-            >
+            <Button href="#calculator" variant="primary">
               Kostenvoranschlag erhalten
             </Button>
           </div>
         </div>
 
+        {/* Contact Information */}
         <div>
           <h4 className="font-bold mb-8 uppercase text-[11px] tracking-[0.2em] text-blue-500">
             Kontakt
@@ -51,6 +54,7 @@ export function Footer() {
           </address>
         </div>
 
+        {/* Legal Sitemap */}
         <div>
           <h4 className="font-bold mb-8 uppercase text-[11px] tracking-[0.2em] text-blue-500">
             Rechtliches
@@ -76,8 +80,10 @@ export function Footer() {
           </nav>
         </div>
       </div>
+
+      {/* Copyright Bar */}
       <div className="max-w-7xl mx-auto pt-16 mt-16 border-t border-neutral-900 text-center text-neutral-600 text-[13px] tracking-wide">
-        © {currentYear} Umzugsservice Dresden. Все права защищены.
+        © {currentYear} Umzugsservice Dresden. Alle Rechte vorbehalten.
       </div>
     </footer>
   );

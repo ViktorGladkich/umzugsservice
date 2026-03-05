@@ -27,7 +27,9 @@ const Button = React.forwardRef<
           "absolute inset-0 w-full h-full scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] rounded-full z-0",
           variant === "primary" || variant === "outline" || variant === "ghost"
             ? "bg-blue-600"
-            : "bg-neutral-950",
+            : variant === "secondary"
+              ? "bg-white"
+              : "bg-neutral-950",
         )}
       />
       <span
@@ -35,7 +37,9 @@ const Button = React.forwardRef<
           "relative z-10 transition-colors duration-500",
           variant === "primary" || variant === "outline" || variant === "ghost"
             ? "group-hover:text-white"
-            : "",
+            : variant === "secondary"
+              ? "group-hover:text-blue-600"
+              : "",
         )}
       >
         {children}
@@ -45,7 +49,9 @@ const Button = React.forwardRef<
           "relative z-10 flex items-center justify-center w-10 h-10 rounded-full transition-colors duration-500 shrink-0",
           variant === "primary" || variant === "outline" || variant === "ghost"
             ? "bg-neutral-950 text-white group-hover:bg-white group-hover:text-blue-600"
-            : "bg-white text-blue-600 group-hover:bg-blue-600 group-hover:text-white",
+            : variant === "secondary"
+              ? "bg-white text-blue-600 group-hover:bg-blue-600 group-hover:text-white"
+              : "bg-white text-blue-600 group-hover:bg-blue-600 group-hover:text-white",
         )}
       >
         <svg
@@ -65,7 +71,7 @@ const Button = React.forwardRef<
   );
 
   const baseStyles =
-    "group relative inline-flex items-center gap-4 pl-7 pr-1.5 py-1.5 rounded-full font-bold text-base transition-all duration-300 active:scale-95 overflow-hidden";
+    "group relative inline-flex items-center gap-4 pl-7 pr-1.5 py-1.5 rounded-full font-bold text-base transition-all duration-300 active:scale-95 overflow-hidden cursor-pointer";
 
   const variants = {
     primary:
