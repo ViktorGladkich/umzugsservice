@@ -187,7 +187,7 @@ export function OutroSlide({ mobile = false }: { mobile?: boolean }) {
         </div>
         <div
           className={cn(
-            "flex flex-col gap-8 md:gap-10",
+            "flex flex-col gap-8 md:gap-2",
             mobile ? "items-center text-center" : "items-start text-left",
           )}
         >

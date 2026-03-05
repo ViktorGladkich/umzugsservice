@@ -1,89 +1,128 @@
 "use client";
 
-import { Button } from "@/components/ui/Button";
+import { ArrowRight } from "lucide-react";
 
 /**
- * Global Footer with contact info and legal navigation.
- * Uses a dark theme to anchor the bottom of the page.
+ * Dark cinematic footer inspired by INVERSA / Awwwards style.
+ * Features a 3-column grid with border dividers and massive neon typography.
  */
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-neutral-950 text-white py-16 md:py-24 px-[15px] md:px-[70px] relative z-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
-        {/* Brand & Description */}
-        <div className="col-span-1 md:col-span-2">
-          <div className="text-3xl font-black tracking-tighter mb-8 italic">
-            Umzugsservice.
+    <footer className="w-full bg-blue-600 text-white relative overflow-hidden">
+      {/* Top Grid: 3 Columns */}
+      <div className="mx-6 md:mx-10 border border-white/20 rounded-t-[4px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/20">
+          {/* Column 1: Contact */}
+          <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-between min-h-[280px]">
+            <h4 className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white/60">
+              Kontakt
+            </h4>
+            <div className="flex flex-col gap-2 mt-auto">
+              <a
+                href="mailto:info@janyusufi.de"
+                className="text-sm md:text-[15px] text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                info@janyusufi.de
+              </a>
+              <a
+                href="tel:+493511234567"
+                className="text-sm md:text-[15px] text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                +49 351 1234567
+              </a>
+            </div>
+            <div className="flex flex-col gap-1 mt-12">
+              <span className="text-sm text-white/80">
+                Umzugsservice Dresden
+              </span>
+              <span className="text-sm text-white/80">01067 Dresden</span>
+              <a
+                href="#about"
+                className="inline-flex items-center gap-1 text-sm text-white/60 hover:text-white transition-colors mt-2 cursor-pointer"
+              >
+                Mehr erfahren
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
           </div>
-          <p className="text-neutral-500 max-w-sm mb-8 text-lg leading-relaxed">
-            Professionelle Umzugsdienstleistungen für Dresden, Sachsen и ganz
-            Europa. Qualität, die man sieht – kompetent und zuverlässig bis ins
-            Detail.
-          </p>
-          <div className="mt-4">
-            <Button href="#calculator" variant="primary">
-              Kostenvoranschlag erhalten
-            </Button>
+
+          {/* Column 2: Connect */}
+          <div className="p-8 md:p-10 lg:p-12 flex flex-col min-h-[280px]">
+            <h4 className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white/60">
+              Verbinden
+            </h4>
+            <div className="flex flex-col gap-2 mt-auto">
+              <a
+                href="#"
+                className="text-sm md:text-[15px] text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                Instagram
+              </a>
+              <a
+                href="#"
+                className="text-sm md:text-[15px] text-white/80 hover:text-white transition-colors cursor-pointer"
+              >
+                WhatsApp
+              </a>
+            </div>
           </div>
-        </div>
 
-        {/* Contact Information */}
-        <div>
-          <h4 className="font-bold mb-8 uppercase text-[11px] tracking-[0.2em] text-blue-500">
-            Kontakt
-          </h4>
-          <address className="flex flex-col gap-6 text-neutral-400 not-italic">
-            <p className="leading-relaxed">
-              Hauptstraße 123, <br />
-              01067 Dresden
-            </p>
-            <a
-              href="tel:+493511234567"
-              className="hover:text-white transition-colors"
-            >
-              +49 (0) 351 1234567
-            </a>
-            <a
-              href="mailto:info@umzug-dresden.de"
-              className="hover:text-white transition-colors"
-            >
-              info@umzug-dresden.de
-            </a>
-          </address>
-        </div>
-
-        {/* Legal Sitemap */}
-        <div>
-          <h4 className="font-bold mb-8 uppercase text-[11px] tracking-[0.2em] text-blue-500">
-            Rechtliches
-          </h4>
-          <nav>
-            <ul className="flex flex-col gap-6 text-neutral-400">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Impressum
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Datenschutz
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  AGB
-                </a>
-              </li>
-            </ul>
-          </nav>
+          {/* Column 3: CTA */}
+          <div className="p-8 md:p-10 lg:p-12 flex flex-col min-h-[280px]">
+            <h4 className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white/60">
+              Angebot
+            </h4>
+            <div className="mt-auto">
+              <a
+                href="#calculator"
+                className="group flex items-center justify-between border-b border-white/30 pb-3 hover:border-white transition-colors cursor-pointer"
+              >
+                <span className="text-sm md:text-[15px] text-white/80 group-hover:text-white transition-colors">
+                  Kostenvoranschlag
+                </span>
+                <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-white transition-colors" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Copyright Bar */}
-      <div className="max-w-7xl mx-auto pt-16 mt-16 border-t border-neutral-900 text-center text-neutral-600 text-[13px] tracking-wide">
-        © {currentYear} Umzugsservice Dresden. Alle Rechte vorbehalten.
+      {/* Massive Neon Typography */}
+      <div className="w-full mt-8 md:mt-12 px-6 md:px-10 pointer-events-none select-none overflow-hidden">
+        <svg
+          viewBox="0 0 1000 180"
+          className="w-full h-auto"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <text
+            x="50%"
+            y="55%"
+            dominantBaseline="central"
+            textAnchor="middle"
+            className="font-black"
+            style={{
+              fontSize: "205px",
+              letterSpacing: "-0.03em",
+              fill: "white",
+            }}
+          >
+            JANYUSUFI
+          </text>
+        </svg>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 px-6 md:px-10 py-6 text-[11px] md:text-xs text-white/50 tracking-wide">
+        <span>©{currentYear} JANYUSUFI</span>
+        <a
+          href="#"
+          className="hover:text-white transition-colors cursor-pointer"
+        >
+          Datenschutz
+        </a>
+        <span>Dresden, DE</span>
       </div>
     </footer>
   );

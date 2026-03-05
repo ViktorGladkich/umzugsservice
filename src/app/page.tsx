@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { FeatureService } from "@/components/FeatureService";
 import { Vorteile } from "@/components/Vorteile";
 import { UberUns } from "@/components/UberUns";
+import { Prozess } from "@/components/Prozess";
 import MovingCalculator from "@/components/Calculator";
 import { Footer } from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
@@ -45,9 +46,14 @@ export default function Home() {
           </article>
         </div>
 
-        {/* UberUns is now completely full width, outside the padding! */}
+        {/* UberUns is full-width, outside the padding */}
         <div className="w-full">
           <UberUns />
+        </div>
+
+        {/* Process section */}
+        <div className="w-full">
+          <Prozess />
         </div>
 
         <div className="px-[15px] md:px-[70px]">
