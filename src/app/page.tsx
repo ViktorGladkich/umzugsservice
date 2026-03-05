@@ -32,7 +32,7 @@ export default function Home() {
 
       {/* Page Content System */}
       <div className="relative z-10 w-full">
-        <div className="px-[70px]">
+        <div className="px-[15px] md:px-[70px]">
           <Navbar />
 
           <article>

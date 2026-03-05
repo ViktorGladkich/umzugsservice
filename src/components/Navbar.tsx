@@ -34,7 +34,7 @@ export function Navbar() {
         opacity: isNavVisible || isMobileMenuOpen ? 1 : 0,
       }}
       transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-[70px] right-[70px] z-50 py-8 ${
+      className={`fixed top-0 left-[15px] right-[15px] md:left-[70px] md:right-[70px] z-50 py-6 md:py-8 ${
         isNavVisible || isMobileMenuOpen
           ? "pointer-events-auto"
           : "pointer-events-none"
