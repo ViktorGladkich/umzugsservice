@@ -17,8 +17,14 @@ export function Hero() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], [0, 300]);
 
   return (
-    <section className="px-0 pb-6 pt-10 min-h-screen bg-white">
-      <div className="relative h-[calc(100vh-120px)] min-h-[600px] w-full rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-neutral-900">
+    <section
+      className="px-0 pb-6 pt-10 bg-white"
+      style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+    >
+      <div
+        className="relative min-h-[600px] w-full rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-neutral-900"
+        style={{ height: "calc(var(--vh, 1vh) * 100 - 120px)" }}
+      >
         {/* Parallax Background Layer */}
         <motion.div
           style={{ y: backgroundY }}
@@ -60,8 +66,7 @@ export function Hero() {
             >
               Ihr Wegbegleiter für nahtlose Umzüge. Vergessen Sie Stress. Wir
               choreografieren den perfekten Wechsel in Ihr neues Leben – mit
-              absoluter{" "}
-              <span className="text-white ">Leichtigkeit</span>.
+              absoluter <span className="text-white ">Leichtigkeit</span>.
             </motion.p>
 
             {/* Primary Action */}

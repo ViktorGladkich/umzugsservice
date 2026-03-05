@@ -10,37 +10,37 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-blue-600 text-white relative overflow-hidden">
+    <footer className="w-full bg-black text-white relative overflow-hidden">
       {/* Top Grid: 3 Columns */}
       <div className="mx-6 md:mx-10 border border-white/20 rounded-t-[4px]">
         <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/20">
           {/* Column 1: Contact */}
           <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-between min-h-[280px]">
-            <h4 className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white/60">
+            <h4 className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white">
               Kontakt
             </h4>
             <div className="flex flex-col gap-2 mt-auto">
               <a
                 href="mailto:info@janyusufi.de"
-                className="text-sm md:text-[15px] text-white/80 hover:text-white transition-colors cursor-pointer"
+                className="text-sm md:text-[15px] text-white hover:text-blue-600 transition-colors cursor-pointer"
               >
                 info@janyusufi.de
               </a>
               <a
                 href="tel:+493511234567"
-                className="text-sm md:text-[15px] text-white/80 hover:text-white transition-colors cursor-pointer"
+                className="text-sm md:text-[15px] text-white hover:text-blue-600 transition-colors cursor-pointer"
               >
                 +49 351 1234567
               </a>
             </div>
             <div className="flex flex-col gap-1 mt-12">
-              <span className="text-sm text-white/80">
+              <span className="text-sm text-white">
                 Umzugsservice Dresden
               </span>
-              <span className="text-sm text-white/80">01067 Dresden</span>
+              <span className="text-sm text-white">01067 Dresden</span>
               <a
                 href="#about"
-                className="inline-flex items-center gap-1 text-sm text-white/60 hover:text-white transition-colors mt-2 cursor-pointer"
+                className="inline-flex items-center gap-1 text-sm text-white hover:text-blue-600 transition-colors mt-2 cursor-pointer"
               >
                 Mehr erfahren
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -50,19 +50,19 @@ export function Footer() {
 
           {/* Column 2: Connect */}
           <div className="p-8 md:p-10 lg:p-12 flex flex-col min-h-[280px]">
-            <h4 className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white/60">
+            <h4 className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white">
               Verbinden
             </h4>
             <div className="flex flex-col gap-2 mt-auto">
               <a
                 href="#"
-                className="text-sm md:text-[15px] text-white/80 hover:text-white transition-colors cursor-pointer"
+                className="text-sm md:text-[15px] text-white hover:text-blue-600 transition-colors cursor-pointer"
               >
                 Instagram
               </a>
               <a
                 href="#"
-                className="text-sm md:text-[15px] text-white/80 hover:text-white transition-colors cursor-pointer"
+                className="text-sm md:text-[15px] text-white hover:text-blue-600 transition-colors cursor-pointer"
               >
                 WhatsApp
               </a>
@@ -71,18 +71,18 @@ export function Footer() {
 
           {/* Column 3: CTA */}
           <div className="p-8 md:p-10 lg:p-12 flex flex-col min-h-[280px]">
-            <h4 className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white/60">
+            <h4 className="text-[11px] md:text-xs font-semibold tracking-[0.2em] uppercase text-white">
               Angebot
             </h4>
             <div className="mt-auto">
               <a
                 href="#calculator"
-                className="group flex items-center justify-between border-b border-white/30 pb-3 hover:border-white transition-colors cursor-pointer"
+                className="group flex items-center justify-between border-b border-white pb-3 hover:border-blue-600 transition-colors cursor-pointer"
               >
-                <span className="text-sm md:text-[15px] text-white/80 group-hover:text-white transition-colors">
+                <span className="text-sm md:text-[15px] text-white group-hover:text-blue-600 transition-colors">
                   Kostenvoranschlag
                 </span>
-                <ArrowRight className="w-4 h-4 text-white/60 group-hover:text-white transition-colors" />
+                <ArrowRight className="w-4 h-4 text-white group-hover:text-blue-600 transition-colors" />
               </a>
             </div>
           </div>
@@ -105,7 +105,7 @@ export function Footer() {
             style={{
               fontSize: "205px",
               letterSpacing: "-0.03em",
-              fill: "white",
+              fill: "blue",
             }}
           >
             JANYUSUFI
@@ -114,15 +114,15 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-4 px-6 md:px-10 py-6 text-[11px] md:text-xs text-white/50 tracking-wide">
-        <span>©{currentYear} JANYUSUFI</span>
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 px-6 md:px-10 py-6 text-[11px] md:text-xs text-white tracking-wide">
+        <span>©{currentYear} JANYUSUFI. All rights reserved.</span>
         <a
-          href="#"
-          className="hover:text-white transition-colors cursor-pointer"
+          href="https://invertadigital.de"
+          className="text-white hover:text-blue-600 transition-colors cursor-pointer underline"
         >
-          Datenschutz
+          Website by INVERTA DIGITAL
         </a>
-        <span>Dresden, DE</span>
+        <span className="text-white">Dresden, DE</span>
       </div>
     </footer>
   );

@@ -7,6 +7,8 @@ export const metadata: Metadata = {
     "Ihr Premium Umzugsunternehmen in Dresden & Europaweit. Sicher verpackt, entspannt bewegt.",
 };
 
+import { ViewportFix } from "@/components/ViewportFix";
+
 export default function RootLayout({
   children,
 }: {
@@ -14,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className="scroll-smooth">
-      <body>{children}</body>
+      <body>
+        <ViewportFix />
+        {children}
+      </body>
     </html>
   );
 }

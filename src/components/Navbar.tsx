@@ -61,7 +61,7 @@ export function Navbar() {
         {/* Branding Logo */}
         <div className="text-xl md:text-2xl font-black tracking-tighter flex items-center gap-2 text-neutral-900">
           <div className="w-6 h-6 md:w-8 md:h-8 bg-blue-600 rounded-lg" />
-          Umzugsservice.
+          JANYUSUFI.
         </div>
 
         {/* Global Desktop Sitemap Links */}
