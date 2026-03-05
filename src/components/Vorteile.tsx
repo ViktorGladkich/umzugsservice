@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Package, Hammer, Clock, User } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { SectionBadge } from "@/components/ui/SectionBadge";
 
 function BentoCard({
   children,
@@ -93,7 +94,7 @@ function FeatureFour() {
           Porzellan alles absolut bruchsicher.
         </p>
       </div>
-      <div className="relative w-full md:w-40 h-40 mt-8 md:mt-0 flex-shrink-0 bg-neutral-900 rounded-3xl flex items-center justify-center border border-neutral-800">
+      <div className="relative w-full md:w-40 h-40 mt-8 md:mt-0 shrink-0 bg-neutral-900 rounded-3xl flex items-center justify-center border border-neutral-800">
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-blue-500/20 to-transparent rounded-b-3xl pointer-events-none" />
         <Package className="w-16 h-16 text-blue-500 relative z-10 animate-bounce [animation-duration:3s]" />
       </div>
@@ -176,7 +177,7 @@ function FeatureEight() {
   );
 }
 
-export default function Services() {
+export function Vorteile() {
   return (
     <section
       id="services"
@@ -184,14 +185,7 @@ export default function Services() {
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16 md:mb-20 text-center md:text-left">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-blue-600 font-bold tracking-widest uppercase text-xs sm:text-sm mb-4 block"
-          >
-            Ihre Vorteile
-          </motion.span>
+          <SectionBadge title="Ihre Vorteile" className="mb-4" />
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

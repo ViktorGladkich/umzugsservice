@@ -4,7 +4,7 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { FeatureService } from "@/components/FeatureService";
-import Services from "@/components/Services";
+import { Vorteile } from "@/components/Vorteile";
 import MovingCalculator from "@/components/Calculator";
 import FloatingActions from "@/components/FloatingActions";
 import { Footer } from "@/components/Footer";
@@ -40,7 +40,7 @@ export default function Home() {
             <FeatureService />
 
             <section id="services">
-              <Services />
+              <Vorteile />
             </section>
 
             <section id="calculator">

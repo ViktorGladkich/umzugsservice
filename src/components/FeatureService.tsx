@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { SectionBadge } from "@/components/ui/SectionBadge";
 
 const services = [
   {
@@ -101,16 +102,7 @@ export function FeatureService() {
       <div className="max-w-[1440px] mx-auto flex flex-col items-start gap-12 md:gap-20 px-6 md:px-0">
         {/* Header content */}
         <div className="flex flex-col items-center text-center gap-4 w-full max-w-[1000px] mx-auto overflow-hidden">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-block bg-[#f3f3f3] border border-[#c7c7c7] px-5 py-2 rounded-[32px]"
-          >
-            <p className="text-sm text-black leading-none font-medium">
-              Unsere Leistungen
-            </p>
-          </motion.div>
+          <SectionBadge title="Unsere Leistungen" />
 
           <div className="relative w-full">
             <h2 className="text-5xl md:text-7xl tracking-[-0.04em] leading-[0.9] text-black whitespace-normal md:whitespace-nowrap">
